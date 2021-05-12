@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  height: 15vh;
+  width: auto;
+  background: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+main {
+  height: 75vh;
+  width: auto;
+  background: rgb(250, 250, 250);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameSetup{
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 100%;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gameSetup .setting_container {
+  background-color: brown;
+  /* Arriba | Derecha | Abajo | Izquierda */
+  margin: 1rem 0.5rem;
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameSetup .setting_container h2{
+  padding-top: 1.2rem;
+  font-size: 3rem;
+}
+
+/* DIV DE BOTONES DE SET */
+.gameSetup #sets_buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+}
+
+/* BOTONES DE SETS */
+.gameSetup #sets_buttons button{
+    height: 60%;
+    width: 30%;
+}
+
+/* DIV DE BOTONES DE GAME */
+.gameSetup #game_buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    height: 80%;
+    width: 100%;
+}
+
+/* BOTONES DE GAMES */
+.gameSetup #game_buttons button{
+    height: 60%;
+    width: 30%;
+}
+
+.gameSetup .setting_container #nombreJugadores{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+    height: 20%;
+}
+
+.gameSetup .setting_container #input_nombre_jugadores{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+}
+
+.gameSetup .setting_container #input_nombre_jugadores input{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 50%;
+    height: 50%;
+}
+/* BOTON DE START */
+.gameSetup .start button{
+    height: 50%;
+    width: 50%;
+    border-radius: 10%;
+    border: 2px solid black;
+    
+  }
+
+footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+footer h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
