@@ -43,26 +43,38 @@
             </div>
         </div>
         <div class="setting_container">
-          <!-- <div id="nombreJugadores">
+          <div id="nombreJugadores">
               <h2>Player 1</h2>
               <h2>Player 2</h2>
           </div>
           <div id="input_nombre_jugadores">
             <div>
-                <input type="text" maxlength="10" required>
+              <input type="text" placeholder="Type something..." id="p1n">
             </div>
             <div>
-                <input type="text" maxlength="10" required>
+              <input type="text" placeholder="Type something..." id="p2n">
             </div>
-          </div> -->
+          </div>
         </div>
         <div class="start setting_container">
-          <button><a href="index.html">Start</a></button>
+          <button ><a href="index.html" onclick="getValue()">Start</a></button>
         </div>
       </section>
     </main>
     <footer>
       <h3>Developed with &#10084; by <a href="">Cadavinci.com</a></h3>
     </footer>
+
+    <script>
+    function getValue(){
+      var p1 = document.getElementById("p1n").value;
+      var p2 = document.getElementById("p2n").value;  
+      
+    
+      
+     localStorage.setItem(1, p1);
+     localStorage.setItem(2, p2);
+    }
+    </script>
   </body>
 </html>
