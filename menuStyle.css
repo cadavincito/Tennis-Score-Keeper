@@ -20,6 +20,10 @@ header {
   color: white;
 }
 
+label, input{
+  display: block;
+}
+
 main {
   height: 75vh;
   width: auto;

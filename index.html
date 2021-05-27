@@ -13,33 +13,51 @@
       <section class="gameSetup">
         <!-- GAMES -->
         <div class="setting_container">
-            <div id="game_buttons">
-              <input type="radio" name="games" value="8"> 8
-              <input type="radio" name="games" value="6"> 6
-              <input type="radio" name="games" value="4"> 4
+          <div id="game_buttons">
+            <div>
+              <label for="8">8</label>
+              <input id="8" type="radio" name="games" value="8" />
             </div>
+            <div>
+              <label for="6">6</label>
+              <input id="6" type="radio" name="games" value="6" />
+            </div>
+            <div>
+              <label for="4">4</label>
+              <input id="4" type="radio" name="games" value="4" />
+            </div>
+          </div>
         </div>
         <div class="setting_container">
           <!-- SETS -->
           <div id="sets_buttons">
-            <input type="radio" name="sets" value="8"> 5
-            <input type="radio" name="sets" value="6"> 3
-            <input type="radio" name="sets" value="4"> 1 
+            <div>
+              <label for="5">5</label>
+              <input id="5" type="radio" name="sets" value="5" />
+            </div>
+            <div>
+              <label for="3">3</label>
+              <input id="3" type="radio" name="sets" value="3" />
+            </div>
+            <div>
+              <label for="1">1</label>
+              <input id="1" type="radio" name="sets" value="1" />
+            </div>
           </div>
         </div>
         <!-- PLAYER NAMES -->
         <div class="setting_container">
-        <div class="player_names">
-          <label for="name">Player 1</label>
-          <input id="p1n" type="text" value="" name="name">
-        </div>
-        <div class="player_names">
-          <label for="name">Player 2</label>
-          <input id="p2n" type="text" value="" name="name">
-        </div>
+          <div class="player_names">
+            <label for="name">Player 1</label>
+            <input id="p1n" type="text" value="" name="name" />
+          </div>
+          <div class="player_names">
+            <label for="name">Player 2</label>
+            <input id="p2n" type="text" value="" name="name" />
+          </div>
         </div>
         <div class="start setting_container">
-          <button ><a href="app.html" onclick="getValue()">Start</a></button>
+          <button><a href="app.html" onclick="getValue()">Start</a></button>
         </div>
       </section>
     </main>
@@ -47,39 +65,38 @@
       <h3>Developed with &#10084; by <a href="">Cadavinci.com</a></h3>
     </footer>
     <script>
-    function getValue(){
-     // name of the player one
-      var p1 = document.getElementById("p1n").value;
-      // name of the player two
-      var p2 = document.getElementById("p2n").value;
+      function getValue() {
+        // name of the player one
+        var p1 = document.getElementById("p1n").value;
+        // name of the player two
+        var p2 = document.getElementById("p2n").value;
 
-      
-      //games per set
-      const gameoptions = document.querySelectorAll('input[name="games"]');
-      let games;
-            for (const game of gameoptions) {
-                if (game.checked) {
-                    games = game.value;
-                    break;
-                }
-            }
-            alert(games);
+        //games per set
+        const gameoptions = document.querySelectorAll('input[name="games"]');
+        let games;
+        for (const game of gameoptions) {
+          if (game.checked) {
+            games = game.value;
+            break;
+          }
+        }
+        alert(games);
 
-      //sets per match
-      const setoptions = document.querySelectorAll('input[name="sets"]');
-      let sets;
-      for (const set of setoptions) {
-        if (set.checked) {
+        //sets per match
+        const setoptions = document.querySelectorAll('input[name="sets"]');
+        let sets;
+        for (const set of setoptions) {
+          if (set.checked) {
             sets = set.value;
             break;
+          }
         }
-    }
-    alert(sets+" sets");
-     localStorage.setItem(1, p1);
-     localStorage.setItem(2, p2);
-     localStorage.setItem(3, games);
-     localStorage.setItem(4, sets);
-    }
+        alert(sets + " sets");
+        localStorage.setItem(1, p1);
+        localStorage.setItem(2, p2);
+        localStorage.setItem(3, games);
+        localStorage.setItem(4, sets);
+      }
     </script>
   </body>
 </html>
