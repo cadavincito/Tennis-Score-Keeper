@@ -4,56 +4,82 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <title>topspin keeper</title>
+    <link rel="stylesheet" href="menuStyle.css" />
+    <title>Document</title>
   </head>
   <body>
+    <header>Tennis score kepper</header>
     <main>
-      <section class="scorPerGameSection">
-        <section class="gamePoints__container">
-          <h2 id="p1score">0</h2>
-          <h2 id="p2score">0</h2>
-        </section>
-      </section>
-      <section class="buttons">
-       <section class="buttons__points">
-        <button id="p1b">Player1</button>
-        <button id="p2b">player2</button>
-       </section>
-       <section class="buttons__points_redo">
-        <button id="r1b">redo1</button>
-        <button id="r2b">redo2</button>
-       </section>
-       
-      </section>
-      <section class="scoreGrid">
-         <section class="grid">
-           <div id="player1">Cadavid</div>
-           <div id="player1__game">0</div>
-           <div id="player1__game">0</div>
-           <div id="player1__game">0</div>
-           <div id="player1__game">0</div>
-          
-           <div id="player2">Elotro</div>
-           <div id="player2__game">0</div>
-           <div id="player2__game">0</div>
-           <div id="player2__game">0</div>
-           <div id="player2__game">0</div>
-         </section> 
+      <section class="gameSetup">
+        <!-- GAMES -->
+        <div class="setting_container">
+            <div id="game_buttons">
+              <input type="radio" name="games" value="8"> 8
+              <input type="radio" name="games" value="6"> 6
+              <input type="radio" name="games" value="4"> 4
+            </div>
+        </div>
+        <div class="setting_container">
+          <!-- SETS -->
+          <div id="sets_buttons">
+            <input type="radio" name="sets" value="8"> 5
+            <input type="radio" name="sets" value="6"> 3
+            <input type="radio" name="sets" value="4"> 1 
+          </div>
+        </div>
+        <!-- PLAYER NAMES -->
+        <div class="setting_container">
+        <div class="player_names">
+          <label for="name">Player 1</label>
+          <input id="p1n" type="text" value="" name="name">
+        </div>
+        <div class="player_names">
+          <label for="name">Player 2</label>
+          <input id="p2n" type="text" value="" name="name">
+        </div>
+        </div>
+        <div class="start setting_container">
+          <button ><a href="app.html" onclick="getValue()">Start</a></button>
+        </div>
       </section>
     </main>
     <footer>
-     <h3> Developed with &#10084; by <a href="">Cadavinci.com</a></h3>
+      <h3>Developed with &#10084; by <a href="">Cadavinci.com</a></h3>
     </footer>
     <script>
-      var p1 = document.getElementById("p1b")
-      var p1Name=localStorage.getItem(1);
-      p1.innerHTML = p1Name;
+    function getValue(){
+     // name of the player one
+      var p1 = document.getElementById("p1n").value;
+      // name of the player two
+      var p2 = document.getElementById("p2n").value;
+
       
-      var p2 = document.getElementById("p2b")
-      var p2Name=localStorage.getItem(2);
-      p2.innerHTML = p2Name;
-  </script>  
-    <script src="logic.js"></script>
+      //games per set
+      const gameoptions = document.querySelectorAll('input[name="games"]');
+      let games;
+            for (const game of gameoptions) {
+                if (game.checked) {
+                    games = game.value;
+                    break;
+                }
+            }
+            alert(games);
+
+      //sets per match
+      const setoptions = document.querySelectorAll('input[name="sets"]');
+      let sets;
+      for (const set of setoptions) {
+        if (set.checked) {
+            sets = set.value;
+            break;
+        }
+    }
+    alert(sets+" sets");
+     localStorage.setItem(1, p1);
+     localStorage.setItem(2, p2);
+     localStorage.setItem(3, games);
+     localStorage.setItem(4, sets);
+    }
+    </script>
   </body>
 </html>
