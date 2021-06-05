@@ -9,7 +9,7 @@ html{
 }
 
 main{
-    height: 90vh;
+    height: 110vh;
     width: auto;
     background: chartreuse;
     display:flex;   
@@ -172,14 +172,17 @@ main{
       font-weight: bold;
   }
 
-footer{
-    height: 5vh;
+
+  footer {
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-}
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
 
-footer h3{
+  footer h3 {
     font-family: Arial, Helvetica, sans-serif;
-}
+    font-size: 1.5rem;
+  }
