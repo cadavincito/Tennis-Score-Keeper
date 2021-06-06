@@ -4,21 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="menuStyle.css" />
+    <link rel="stylesheet" href="indexStyle.css" />
     <title>Topspin keeper</title>
   </head>
   <body>
     <header>Tennis score kepper</header>
     <main>
       <section class="gameSetup">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <h1 style="font-size: 2.4rem">Game settings:</h1>
+            <h2 id="settingP1"></h2>
+            <h2 id="settingP2"></h2>
+            <h2 id="settingSets"></h2>
+            <h2 id="settingGames"></h2>
+            <div class="botones">
+              <button  style="background-color: rgb(37, 155, 37)"><a href="app.html" style="text-decoration: none;color:white">accept</a></button>
+              <button style="background-color: rgb(221, 30, 30)" id="cancel">
+                cancel
+              </button>
+            </div>
+          </div>
+        </div>
         <!-- PLAYER NAMES -->
         <div class="setting_container">
           <div class="player_names">
-            <label for="name" style="text-align: center;">Player 1</label>
+            <label for="name" style="text-align: center">Player 1</label>
             <input id="p1n" type="text" value="" name="name" />
           </div>
           <div class="player_names">
-            <label for="name" style="text-align: center;">Player 2</label>
+            <label for="name" style="text-align: center">Player 2</label>
             <input id="p2n" type="text" value="" name="name" />
           </div>
         </div>
@@ -56,12 +73,14 @@
               <label for="8">8</label>
               <input id="8" type="radio" name="games" value="8" />
             </div>
-         
           </div>
         </div>
 
-        <div class="start setting_container" style="background-color: transparent;">
-          <button><a href="app.html" onclick="getValue()">Start</a></button>
+        <div
+          class="start setting_container"
+          style="background-color: transparent"
+        >
+          <button><a href="#" onclick="getValue()">Start</a></button>
         </div>
       </section>
     </main>
@@ -87,7 +106,6 @@
             break;
           }
         }
-        alert(games);
 
         //sets per match
         const setoptions = document.querySelectorAll('input[name="sets"]');
@@ -98,7 +116,25 @@
             break;
           }
         }
-        alert(sets + " sets");
+
+        /************
+        MODAL STUFF
+        ***********/
+        //modal
+        document.getElementById("myModal").style.display = "block";
+        //modal elements
+        document.getElementById("settingP1").innerHTML = "Player 1: " + p1;
+        document.getElementById("settingP2").innerHTML = "Player 2: " + p2;
+        document.getElementById("settingSets").innerHTML = "Sets: " + sets;
+        document.getElementById("settingGames").innerHTML = "Games: " + games;
+        //modal button methods
+        document.getElementById("cancel").onclick = function () {
+          document.getElementById("myModal").style.display = "none";
+        };
+        
+        
+
+        //cookies
         localStorage.setItem(1, p1);
         localStorage.setItem(2, p2);
         localStorage.setItem(3, games);
