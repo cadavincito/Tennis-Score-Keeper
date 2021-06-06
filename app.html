@@ -15,7 +15,13 @@
           <h2 id="p2score">0</h2>
         </section>
       </section>
+
+      <!-- BUTTON SECTION -->
       <section class="buttons">
+        <section class="buttons__names">
+          <button id="p1b"></button>
+          <button id="p2b"></button>
+         </section>
        <section class="buttons__points">
         <button id="p1b"></button>
         <button id="p2b"></button>
@@ -27,19 +33,15 @@
        
       </section>
       <section class="scoreGrid">
-         <section class="grid">
-           <div id="player1">P1</div>
-           <div id="player1__game">0</div>
-           <div id="player1__game">0</div>
-           <div id="player1__game">0</div>
-           <div id="player1__game">0</div>
+         <section class="grid1">
+          <p>P1</p>
+         
           
-           <div id="player2">P2</div>
-           <div id="player2__game">0</div>
-           <div id="player2__game">0</div>
-           <div id="player2__game">0</div>
-           <div id="player2__game">0</div>
-         </section> 
+        </section>
+        <section class="grid2">
+          <p>P2</p>
+          
+        </section>
       </section>
     </main>
    
@@ -56,7 +58,7 @@
 
       var sets = localStorage.getItem(4);
 
-      alert("games" + games +"\n" + "sets:" +sets)
+   
   </script>  
     <script src="logic.js"></script>
   </body>
