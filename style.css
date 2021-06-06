@@ -52,7 +52,6 @@ main{
 
 .gamepoints{
     height: 25%;
-    background-color: rgb(128, 5, 97);
     width:100%;
     display: flex;
     justify-content: center;
@@ -84,6 +83,7 @@ main{
 }
 .buttons .buttons__points button{
     margin: 0 auto;
+    padding:6px;
     width: 120px;
     height: 66px;
     background-color: black;

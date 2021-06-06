@@ -54,7 +54,7 @@ function increasePoint2 () {
 //    alert("el valor de los games para el p1 es: "+ p);
     if (p===0){
         game2++
-        gamePlayer2.innerHTML = game1;
+        gamePlayer2.innerHTML = game2;
          if(setFinished(game2)){
            // gamePlayer1 = document.getElementById(`player1__game${}`);
            alert("se acabó el set");
