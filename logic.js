@@ -26,10 +26,10 @@ let p1scoreLabel = document.getElementById("p1score");
 let p2scoreLabel = document.getElementById("p2score");
 
 //DIVS (CURRENT SET SOCRE)
-var gamePlayer1 = document.getElementById("player1__game");
+var gamePlayer1 = document.getElementById("p1s0");
 let game1 = 0;
 
-var gamePlayer2 = document.getElementById("player2__game");
+var gamePlayer2 = document.getElementById("p2s0");
 let game2 = 0;
 
 

@@ -60,12 +60,14 @@
 
       for (var i = 0;i<sets;i++){
         var para = document.createElement("P");
+        para.id = "p1s"+i;
         para.innerText = "0";
         document.getElementById("grid1").appendChild(para);
        }
 
        for (var i = 0;i<sets;i++){
         var para = document.createElement("P");
+        para.id = "p2s"+i;
         para.innerText = "0";
         document.getElementById("grid2").appendChild(para);
        }
