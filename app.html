@@ -59,9 +59,15 @@
       var sets = localStorage.getItem(4);
 
       for (var i = 0;i<sets;i++){
-        var h2 = document.getElementById("grid1").createElement("H2");
-        h2.innerText = "0";
-        document.body.appendChild(para);
+        var para = document.createElement("P");
+        para.innerText = "0";
+        document.getElementById("grid1").appendChild(para);
+       }
+
+       for (var i = 0;i<sets;i++){
+        var para = document.createElement("P");
+        para.innerText = "0";
+        document.getElementById("grid2").appendChild(para);
        }
 
    

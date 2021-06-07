@@ -37,7 +37,7 @@ let game2 = 0;
 function increasePoint1(){
     p1scoreLabel.innerHTML = point(p1scoreLabel.innerHTML);
     var p = parseInt(p1scoreLabel.innerHTML);
-//    alert("el valor de los games para el p1 es: "+ p);
+
     if (p===0){
         game1++
         gamePlayer1.innerHTML = game1;
@@ -51,7 +51,7 @@ function increasePoint1(){
 function increasePoint2 () {
     p2scoreLabel.innerHTML = point(p2scoreLabel.innerHTML);
     var p = parseInt(p2scoreLabel.innerHTML);
-//    alert("el valor de los games para el p1 es: "+ p);
+
     if (p===0){
         game2++
         gamePlayer2.innerHTML = game2;

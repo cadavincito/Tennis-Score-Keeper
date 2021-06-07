@@ -145,8 +145,7 @@ padding-top: 12px;
 } */
 
 .scoreGrid{
-    margin-top: 21px;
-    background-color: chartreuse;
+    margin-top: 12px;
     height:240px;
     width:100%;
     display: flex;
@@ -167,7 +166,7 @@ padding-top: 12px;
 
 .scoreGrid #grid1 p,.scoreGrid #grid2 p{
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
