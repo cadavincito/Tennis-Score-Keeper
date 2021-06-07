@@ -23,7 +23,26 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.scorPerGameSection .names{
+display: flex;
+width: 80%;
+justify-content: space-around;
+align-items: center;
+flex-direction: row;
+background-color: black;
+padding: 12px 6px;
+padding-top: 12px;
+}
+
+.scorPerGameSection .names h2{
+    color: rgb(255, 255, 255);
+    font-size: 2.4rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 #p1score{
@@ -74,7 +93,7 @@ main{
 
 .buttons .buttons__points{
     width: 80%;
-    height: 70%;
+    height: 60%;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -126,7 +145,7 @@ main{
 } */
 
 .scoreGrid{
-    margin-top: 45px;
+    margin-top: 21px;
     background-color: chartreuse;
     height:240px;
     width:100%;
@@ -136,7 +155,7 @@ main{
     flex-direction: column;
 }
 
-.scoreGrid .grid1{
+.scoreGrid #grid1{
     width: 90%;
     height: 50%;
     background-color: rgb(0, 89, 255);
@@ -146,13 +165,13 @@ main{
     flex-direction: row;
 }
 
-.scoreGrid .grid1 p,.scoreGrid .grid2 p{
+.scoreGrid #grid1 p,.scoreGrid #grid2 p{
   font-weight: 600;
   font-size: 2.4rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scoreGrid .grid2{
+.scoreGrid #grid2{
     width: 90%;
     height: 50%;
     background-color: rgb(116, 26, 26);

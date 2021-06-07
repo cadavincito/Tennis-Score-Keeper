@@ -10,6 +10,10 @@
   <body>
     <main>
       <section class="scorPerGameSection">
+        <section class="names">
+          <h2 id="p1l"></h2>
+          <h2 id="p2l"></h2>
+        </section>
         <section class="gamePoints__container">
           <h2 id="p1score">0</h2>
           <h2 id="p2score">0</h2>
@@ -18,13 +22,9 @@
 
       <!-- BUTTON SECTION -->
       <section class="buttons">
-        <section class="buttons__names">
-          <button id="p1b"></button>
-          <button id="p2b"></button>
-         </section>
        <section class="buttons__points">
-        <button id="p1b"></button>
-        <button id="p2b"></button>
+        <button id="p1b">P1</button>
+        <button id="p2b">P2</button>
        </section>
        <section class="buttons__points_redo">
         <button id="r1b"><span style='font-size:30px; color:rgb(253, 253, 253)'>&#8635;</span></button>
@@ -33,12 +33,12 @@
        
       </section>
       <section class="scoreGrid">
-         <section class="grid1">
+         <section id="grid1">
           <p>P1</p>
          
           
         </section>
-        <section class="grid2">
+        <section id="grid2">
           <p>P2</p>
           
         </section>
@@ -46,17 +46,23 @@
     </main>
    
     <script>
-      var p1 = document.getElementById("p1b")
+      var p1 = document.getElementById("p1l")
       var p1Name=localStorage.getItem(1);
       p1.innerHTML = p1Name;
       
-      var p2 = document.getElementById("p2b")
+      var p2 = document.getElementById("p2l")
       var p2Name=localStorage.getItem(2);
       p2.innerHTML = p2Name;
 
       var games = localStorage.getItem(3);
 
       var sets = localStorage.getItem(4);
+
+      for (var i = 0;i<sets;i++){
+        var h2 = document.getElementById("grid1").createElement("H2");
+        h2.innerText = "0";
+        document.body.appendChild(para);
+       }
 
    
   </script>  
