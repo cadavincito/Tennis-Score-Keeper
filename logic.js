@@ -1,3 +1,10 @@
+//COOKIE STUFF
+//sets per match
+var sets = localStorage.getItem(4);
+alert(sets)
+//games  per set
+var games = localStorage.getItem(3);
+
 //BUTTONS
 //player 1 point button
 const player1button = document.getElementById("p1b");
@@ -32,6 +39,12 @@ let game1 = 0;
 var gamePlayer2 = document.getElementById("p2s0");
 let game2 = 0;
 
+//sets won by each player
+//with these values you can know when a match is done
+let p1amountofsets = 0;
+
+let p2amountofsets = 0;
+
 
 
 function increasePoint1(){
@@ -44,6 +57,7 @@ function increasePoint1(){
          if(setFinished(game1)){
            // gamePlayer1 = document.getElementById(`player1__game${}`);
            alert("se acabó el set");
+           
          }
     }
 }
@@ -58,6 +72,9 @@ function increasePoint2 () {
          if(setFinished(game2)){
            // gamePlayer1 = document.getElementById(`player1__game${}`);
            alert("se acabó el set");
+         }
+         if (matchFinished()){
+            alert("se acabó el partido");
          }
     }
 }
@@ -81,11 +98,27 @@ function point(x){
 }
 
 function setFinished(x) {
-    if (x>6){
-        return true;
+    if (x==games){
+        
+        alert(`game player1 id == ${gamePlayer1.id}`);
+        numberoftheid = parseInt(gamePlayer1.id.charAt(gamePlayer1.id.length-1))
+        var n = (parseInt(numberoftheid)+1);
+        alert(n+" is the value of n")
+        id = (`p1s${n}`)
+        alert(id)
+        gamePlayer1 = document.getElementById(id);
+        game1 = 0;
     }
     return false;
 }
+
+function matchFinished(){
+    if (p1amountofsets == sets|| p2amountofsets == sets){
+        disabled = true;
+        disabled = true;
+    }
+}
+
 
 function decreasePoint1(){
     p1scoreLabel.innerHTML = decreasePoint(p1scoreLabel.innerHTML);
