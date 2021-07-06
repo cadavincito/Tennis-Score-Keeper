@@ -1,9 +1,26 @@
 //COOKIE STUFF
 //sets per match
 var sets = localStorage.getItem(4);
-alert(sets)
+
 //games  per set
 var games = localStorage.getItem(3);
+
+function setsToWin() {
+    var s = parseInt(sets)
+    switch (s) {
+        case 1:
+            return 1;
+            break;
+        case 3:
+            return 2;
+            break;
+        case 5:
+            return 3;
+            break;
+  }
+}
+    var sets_to_win = setsToWin()
+  alert(`sets to win ${sets_to_win}`)
 
 //BUTTONS
 //player 1 point button
@@ -50,15 +67,25 @@ let p2amountofsets = 0;
 function increasePoint1(){
     p1scoreLabel.innerHTML = point(p1scoreLabel.innerHTML);
     var p = parseInt(p1scoreLabel.innerHTML);
+    if( gamePlayer1 != null)
+    {
+        if (p===0){
+            game1++
+            gamePlayer1.innerHTML = game1;
+             if(setFinished(game1,1)){
+               // gamePlayer1 = document.getElementById(`player1__game${}`);
+               alert("se acabó el set p1");
+               p1scoreLabel.innerHTML=0;
+               p2scoreLabel.innerHTML=0;
+               p1amountofsets++;
+             }
+             if (matchFinished()){
+                alert("se acabó el partido");
+             }
+        }
+    }else{
+        alert("el boton de p1 ya no está referenciado")
 
-    if (p===0){
-        game1++
-        gamePlayer1.innerHTML = game1;
-         if(setFinished(game1)){
-           // gamePlayer1 = document.getElementById(`player1__game${}`);
-           alert("se acabó el set");
-           
-         }
     }
 }
 
@@ -69,9 +96,12 @@ function increasePoint2 () {
     if (p===0){
         game2++
         gamePlayer2.innerHTML = game2;
-         if(setFinished(game2)){
+         if(setFinished(game2,2)){
            // gamePlayer1 = document.getElementById(`player1__game${}`);
-           alert("se acabó el set");
+           alert("se acabó el set p2");
+           p1scoreLabel.innerHTML=0;
+           p2scoreLabel.innerHTML=0;
+           p2amountofsets++;
          }
          if (matchFinished()){
             alert("se acabó el partido");
@@ -97,25 +127,46 @@ function point(x){
     }
 }
 
-function setFinished(x) {
-    if (x==games){
-        
-        alert(`game player1 id == ${gamePlayer1.id}`);
-        numberoftheid = parseInt(gamePlayer1.id.charAt(gamePlayer1.id.length-1))
-        var n = (parseInt(numberoftheid)+1);
-        alert(n+" is the value of n")
-        id = (`p1s${n}`)
-        alert(id)
-        gamePlayer1 = document.getElementById(id);
-        game1 = 0;
+function setFinished(x,player) {
+    if (player == 1){
+        if (x==games){
+            numberoftheid = parseInt(gamePlayer1.id.charAt(gamePlayer1.id.length-1))
+            var n = (parseInt(numberoftheid)+1);
+            
+            idp1 = (`p1s${n}`)
+            idp2 = (`p2s${n}`)
+           
+            gamePlayer1 = document.getElementById(idp1);
+            gamePlayer2 = document.getElementById(idp2);
+            game1 = 0;
+            game2 = 0;
+            return true;
+        }
+    }else if (player == 2){
+        if (x==games){
+            numberoftheid = parseInt(gamePlayer2.id.charAt(gamePlayer2.id.length-1))
+            var n = (parseInt(numberoftheid)+1);
+            alert(n+" is the value of n")
+            idp1 = (`p1s${n}`)
+            idp2 = (`p2s${n}`)
+           
+            gamePlayer1 = document.getElementById(idp1);
+            gamePlayer2 = document.getElementById(idp2);
+            game1 = 0;
+            game2 = 0;
+            return true;
+        }
     }
     return false;
 }
 
 function matchFinished(){
-    if (p1amountofsets == sets|| p2amountofsets == sets){
-        disabled = true;
-        disabled = true;
+    if (p1amountofsets == sets_to_win|| p2amountofsets == sets_to_win){
+        alert("a apagar los botones")
+        player1button.disabled = true;
+        player2button.disabled = true;
+        player1button.id = "disabled";
+        player2button.id = "disabled";
     }
 }
 
