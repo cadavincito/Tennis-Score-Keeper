@@ -10,7 +10,7 @@ html {
 }
 
 header {
-  height: 9vh;
+  height: 6vh;
   width: auto;
   background: rgb(0, 0, 0);
   display: flex;
@@ -48,7 +48,7 @@ main {
   /* Arriba | Derecha | Abajo | Izquierda */
   margin: 1rem 0.5rem;
   width: 330px;
-  height: 40%;
+  height: 99px;
   display: flex;
   justify-content: space-evenly;
     align-items: center;
@@ -129,14 +129,14 @@ main {
     justify-content: space-evenly;
     align-items: center;
     width: 50%;
-    height: 80%;
+    height: 60%;
 }
 
 
 /* BOTON DE START */
 .gameSetup .start button{
-    height: 90px;
-    width: 270px;
+    height: 60px;
+    width: 150px;
     border-radius: 15px;
     background-color: black;
     border: 2px solid black;
@@ -151,7 +151,7 @@ main {
   }
 
 footer {
-  height: 10vh;
+  height: 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
