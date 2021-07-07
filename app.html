@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/ball-01.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>topspin keeper</title>
+    <title>Tennis rancho</title>
   </head>
   <body>
     <main>
+      <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <h1 style="font-size: 2.4rem">Game settings:</h1>
+            <h2 id="settingP1"></h2>
+            <h2 id="settingP2"></h2>
+            <h2 id="settingSets"></h2>
+            <h2 id="settingGames"></h2>
+            <div class="botones">
+              <button  style="background-color: rgb(37, 155, 37)"><a href="app.html" style="text-decoration: none;color:white">accept</a></button>
+              <button style="background-color: rgb(221, 30, 30)" id="cancel">
+                cancel
+              </button>
+            </div>
+          </div>
+        </div>
       <section class="scorPerGameSection">
         <section class="names">
           <h2 id="p1l"></h2>
@@ -77,7 +95,8 @@
         para.innerText = "0";
         document.getElementById("grid2").appendChild(para);
        }
-
+      
+      
    
   </script>  
     <script src="logic.js"></script>

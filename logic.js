@@ -140,6 +140,8 @@ function setFinished(x,player) {
             gamePlayer2 = document.getElementById(idp2);
             game1 = 0;
             game2 = 0;
+
+            displayStats()
             return true;
         }
     }else if (player == 2){
@@ -154,6 +156,7 @@ function setFinished(x,player) {
             gamePlayer2 = document.getElementById(idp2);
             game1 = 0;
             game2 = 0;
+            displayStats()
             return true;
         }
     }
@@ -195,3 +198,20 @@ function decreasePoint(x){
         break;
     }
 }
+
+function displayStats(){
+    /************
+    MODAL STUFF
+    ***********/
+    //modal
+    document.getElementById("myModal").style.display = "block";
+    //modal elements
+    document.getElementById("settingP1").innerHTML = "Player 1: " + p1;
+    document.getElementById("settingP2").innerHTML = "Player 2: " + p2;
+    document.getElementById("settingSets").innerHTML = "Sets: " + sets;
+    document.getElementById("settingGames").innerHTML = "Games: " + games;
+    //modal button methods
+    document.getElementById("cancel").onclick = function () {
+      document.getElementById("myModal").style.display = "none";
+    };
+  }

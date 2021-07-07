@@ -4,24 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/img/ball-01.svg" type="image/x-icon">
     <link rel="stylesheet" href="indexStyle.css" />
-    <title>Topspin keeper</title>
+    <title>Tennis rancho</title>
   </head>
   <body>
-    <header>Tennis score kepper</header>
+    <header><a href="info.html"><img src="assets/img/tennisrancho-01.svg" alt="tennis ball"></a></header>
     <main>
       <section class="gameSetup">
         <!-- The Modal -->
         <div id="myModal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <h1 style="font-size: 2.4rem">Game settings:</h1>
             <h2 id="settingP1"></h2>
             <h2 id="settingP2"></h2>
             <h2 id="settingSets"></h2>
             <h2 id="settingGames"></h2>
             <div class="botones">
-              <button  style="background-color: rgb(37, 155, 37)"><a href="app.html" style="text-decoration: none;color:white">accept</a></button>
+              <button  style="background-color: #088dfadc"><a href="app.html" style="text-decoration: none;color:white">accept</a></button>
               <button style="background-color: rgb(221, 30, 30)" id="cancel">
                 cancel
               </button>
@@ -29,14 +29,13 @@
           </div>
         </div>
         <!-- PLAYER NAMES -->
+        <h2>Player names</h2>
         <div class="setting_container">
           <div class="player_names">
-            <label for="name" style="text-align: center">Player 1</label>
-            <input id="p1n" type="text" value="" name="name"  maxlength="9" />
+            <input id="p1n" type="text" value="" name="name"  maxlength="9" placeholder="Player 1 name" />
           </div>
           <div class="player_names">
-            <label for="name" style="text-align: center">Player 2</label>
-            <input id="p2n" type="text" value="" name="name" maxlength="9" />
+            <input id="p2n" type="text" value="" name="name" maxlength="9" placeholder="Player 2 name" />
           </div>
         </div>
         <!-- SETS -->
@@ -78,16 +77,16 @@
 
         <div
           class="start setting_container"
-          style="background-color: transparent"
+          style="background-color: transparent;border:none;"
         >
           <button><a href="#" onclick="getValue()">Start</a></button>
         </div>
       </section>
     </main>
     <footer>
-      <h3>
-        Developed with &#10084; by
-        <a style="text-decoration:none;color:white" href="https://cadavinci.com" target="_blank">Cadavinci.com</a>
+      <h3 style="text-align: center;">
+        Tennis rancho scoreboard is developed with &#10084; by
+        <a  href="https://cadavinci.com" target="_blank">Cadavinci.com</a>
       </h3>
     </footer>
     <script>
