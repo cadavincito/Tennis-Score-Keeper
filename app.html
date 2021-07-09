@@ -9,24 +9,23 @@
     <title>Tennis rancho</title>
   </head>
   <body>
-    <main>
-      <!-- The Modal -->
+   <!-- The Modal -->
         <div id="myModal" class="modal">
           <!-- Modal content -->
           <div class="modal-content">
-            <h1 style="font-size: 2.4rem">Game settings:</h1>
-            <h2 id="settingP1"></h2>
-            <h2 id="settingP2"></h2>
-            <h2 id="settingSets"></h2>
-            <h2 id="settingGames"></h2>
+            <p id="namesm"></p>
+            <p id="pointsm"></p>
+            <p id="gamesm"></p>
+            <p id="winnerm"></p>
+
             <div class="botones">
-              <button  style="background-color: rgb(37, 155, 37)"><a href="app.html" style="text-decoration: none;color:white">accept</a></button>
-              <button style="background-color: rgb(221, 30, 30)" id="cancel">
-                cancel
+              <button onclick="closeModal()" style="background-color: rgb(221, 30, 30)" id="cancel">
+                close
               </button>
             </div>
           </div>
         </div>
+    <main>
       <section class="scorPerGameSection">
         <section class="names">
           <h2 id="p1l"></h2>

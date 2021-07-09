@@ -1,10 +1,11 @@
 //COOKIE STUFF
-//sets per match
-var sets = localStorage.getItem(4);
-
 //games  per set
 var games = localStorage.getItem(3);
+var sets = localStorage.getItem(4);
 
+
+//this method calculates the amount 
+//of sets required to win
 function setsToWin() {
     var s = parseInt(sets)
     switch (s) {
@@ -20,7 +21,6 @@ function setsToWin() {
   }
 }
     var sets_to_win = setsToWin()
-  alert(`sets to win ${sets_to_win}`)
 
 //BUTTONS
 //player 1 point button
@@ -49,6 +49,10 @@ const noAdd = true;
 let p1scoreLabel = document.getElementById("p1score");
 let p2scoreLabel = document.getElementById("p2score");
 
+//NAMES OF THE PLAYERS
+let p1n = document.getElementById("p1l").innerHTML
+let p2n = document.getElementById("p2l").innerHTML
+
 //DIVS (CURRENT SET SOCRE)
 var gamePlayer1 = document.getElementById("p1s0");
 let game1 = 0;
@@ -62,10 +66,18 @@ let p1amountofsets = 0;
 
 let p2amountofsets = 0;
 
+//total amount of points won by player
+let p1amountofpoints = 0;
+
+let p2amountofpoints = 0;
+
+
+
 
 
 function increasePoint1(){
     p1scoreLabel.innerHTML = point(p1scoreLabel.innerHTML);
+    p1amountofpoints++;
     var p = parseInt(p1scoreLabel.innerHTML);
     if( gamePlayer1 != null)
     {
@@ -91,8 +103,9 @@ function increasePoint1(){
 
 function increasePoint2 () {
     p2scoreLabel.innerHTML = point(p2scoreLabel.innerHTML);
-    var p = parseInt(p2scoreLabel.innerHTML);
+    p2amountofpoints++;
 
+    var p = parseInt(p2scoreLabel.innerHTML);
     if (p===0){
         game2++
         gamePlayer2.innerHTML = game2;
@@ -176,10 +189,12 @@ function matchFinished(){
 
 function decreasePoint1(){
     p1scoreLabel.innerHTML = decreasePoint(p1scoreLabel.innerHTML);
+    p1amountofpoints--;
 }
 
 function decreasePoint2(){
     p2scoreLabel.innerHTML = decreasePoint(p2scoreLabel.innerHTML);
+    p2amountofpoints--;
 }
 
 function decreasePoint(x){
@@ -199,19 +214,16 @@ function decreasePoint(x){
     }
 }
 
-function displayStats(){
-    /************
-    MODAL STUFF
-    ***********/
-    //modal
+function displayStats(){    
     document.getElementById("myModal").style.display = "block";
-    //modal elements
-    document.getElementById("settingP1").innerHTML = "Player 1: " + p1;
-    document.getElementById("settingP2").innerHTML = "Player 2: " + p2;
-    document.getElementById("settingSets").innerHTML = "Sets: " + sets;
-    document.getElementById("settingGames").innerHTML = "Games: " + games;
-    //modal button methods
-    document.getElementById("cancel").onclick = function () {
-      document.getElementById("myModal").style.display = "none";
-    };
+
+
+    document.getElementById("namesm").innerHTML = `p1 vs p2`;
+    document.getElementById("pointsm").innerHTML = `${p1amountofpoints} total points ${p2amountofpoints}`;
+    // document.getElementById("gamesm").innerHTML = `${p1n} games won ${p2n}`;
+   
+  }
+
+  function closeModal(){
+    document.getElementById("myModal").style.display = "none";
   }
