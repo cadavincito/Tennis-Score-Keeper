@@ -23,6 +23,7 @@ function setsToWin() {
     var sets_to_win = setsToWin()
 
 //BUTTONS
+const homebutton = document.getElementById("home");
 //player 1 point button
 const player1button = document.getElementById("p1b");
 //player 2 point button
@@ -35,7 +36,6 @@ player2button.addEventListener("click",increasePoint2);
 const redo1button = document.getElementById("r1b");
 //player 2 redo point button
 const redo2button = document.getElementById("r2b");
-
 //events of redo buttons
 redo1button.addEventListener("click", decreasePoint1);
 redo2button.addEventListener("click", decreasePoint2);
@@ -60,11 +60,20 @@ let game1 = 0;
 var gamePlayer2 = document.getElementById("p2s0");
 let game2 = 0;
 
+
+// MATCH STATS 
+//winner
+let winner;
 //sets won by each player
 //with these values you can know when a match is done
 let p1amountofsets = 0;
 
 let p2amountofsets = 0;
+
+//total amount of games won by player
+let p1amountofgames = 0;
+
+let p2amountofgames = 0;
 
 //total amount of points won by player
 let p1amountofpoints = 0;
@@ -84,20 +93,15 @@ function increasePoint1(){
         if (p===0){
             game1++
             gamePlayer1.innerHTML = game1;
+            p1amountofgames++;
              if(setFinished(game1,1)){
-               // gamePlayer1 = document.getElementById(`player1__game${}`);
-               alert("se acabó el set p1");
                p1scoreLabel.innerHTML=0;
                p2scoreLabel.innerHTML=0;
                p1amountofsets++;
              }
-             if (matchFinished()){
-                alert("se acabó el partido");
-             }
-        }
-    }else{
-        alert("el boton de p1 ya no está referenciado")
 
+            matchFinished();
+        }
     }
 }
 
@@ -109,16 +113,15 @@ function increasePoint2 () {
     if (p===0){
         game2++
         gamePlayer2.innerHTML = game2;
+        p2amountofgames++;
          if(setFinished(game2,2)){
            // gamePlayer1 = document.getElementById(`player1__game${}`);
-           alert("se acabó el set p2");
            p1scoreLabel.innerHTML=0;
            p2scoreLabel.innerHTML=0;
            p2amountofsets++;
          }
-         if (matchFinished()){
-            alert("se acabó el partido");
-         }
+         
+        matchFinished()
     }
 }
 
@@ -153,15 +156,12 @@ function setFinished(x,player) {
             gamePlayer2 = document.getElementById(idp2);
             game1 = 0;
             game2 = 0;
-
-            displayStats()
             return true;
         }
     }else if (player == 2){
         if (x==games){
             numberoftheid = parseInt(gamePlayer2.id.charAt(gamePlayer2.id.length-1))
             var n = (parseInt(numberoftheid)+1);
-            alert(n+" is the value of n")
             idp1 = (`p1s${n}`)
             idp2 = (`p2s${n}`)
            
@@ -169,7 +169,6 @@ function setFinished(x,player) {
             gamePlayer2 = document.getElementById(idp2);
             game1 = 0;
             game2 = 0;
-            displayStats()
             return true;
         }
     }
@@ -177,12 +176,22 @@ function setFinished(x,player) {
 }
 
 function matchFinished(){
-    if (p1amountofsets == sets_to_win|| p2amountofsets == sets_to_win){
-        alert("a apagar los botones")
-        player1button.disabled = true;
-        player2button.disabled = true;
-        player1button.id = "disabled";
-        player2button.id = "disabled";
+    if (p1amountofsets == sets_to_win){
+        winner = p1n;
+        player1button.style.display = "none";
+        player2button.style.display = "none";
+        redo1button.style.display = "none";
+        redo2button.style.display = "none";
+        homebutton.style.display = "block";
+        displayStats();
+    }else if(p2amountofsets == sets_to_win){
+        winner = p2n;
+        player1button.style.display = "none";
+        player2button.style.display = "none";
+        redo1button.style.display = "none";
+        redo2button.style.display = "none";
+        homebutton.style.display = "block";
+        displayStats();
     }
 }
 
@@ -220,8 +229,8 @@ function displayStats(){
 
     document.getElementById("namesm").innerHTML = `p1 vs p2`;
     document.getElementById("pointsm").innerHTML = `${p1amountofpoints} total points ${p2amountofpoints}`;
-    // document.getElementById("gamesm").innerHTML = `${p1n} games won ${p2n}`;
-   
+    document.getElementById("gamesm").innerHTML = `${p1amountofgames} games won ${p2amountofgames}`;
+    document.getElementById("winnerm").innerHTML = `Winner: ${winner}`
   }
 
   function closeModal(){
